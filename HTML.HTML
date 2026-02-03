@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Periodic Table - Enhanced</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS.CSS">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="app-container">
+        <header>
+            <h1>⚛️ QUANTUM TABLE</h1>
+            <div class="controls">
+                <input type="text" id="search" placeholder="🔍 Search elements...">
+                <select id="view-mode">
+                    <option value="category">View: Category</option>
+                    <option value="atomic_mass">Heatmap: Atomic Mass</option>
+                    <option value="electronegativity_pauling">Heatmap: Electronegativity</option>
+                    <option value="density">Heatmap: Density</option>
+                    <option value="melting_point">Heatmap: Melting Point</option>
+                    <option value="boiling_point">Heatmap: Boiling Point</option>
+                </select>
+                <button id="legend-toggle">Show Legend</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="table-wrapper">
+                <div id="periodic-table" class="category-mode">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading elements...
+                    </div>
+                </div>
+            </div>
+
+            <aside id="inspector" class="inspector">
+                <div id="empty-state">
+                    <p style="text-align: center; margin-top: 50%; opacity: 0.5; line-height: 1.6;">
+                        ✨ Select an element to analyze its atomic structure and properties
+                    </p>
+                </div>
+                <div id="content" class="hidden">
+                    <div class="detail-header">
+                        <div id="det-num"></div>
+                        <div id="det-sym"></div>
+                        <h2 id="det-name"></h2>
+                        <span id="det-cat"></span>
+                    </div>
+
+                    <div class="bohr-model" id="bohr">
+                        <div class="nucleus" data-protons=""></div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item"><label>Atomic Mass</label><span id="det-weight"></span></div>
+                        <div class="stat-item"><label>Phase (STP)</label><span id="det-phase"></span></div>
+                        <div class="stat-item"><label>Electron Config</label><span id="det-config"></span></div>
+                        <div class="stat-item"><label>Discovered By</label><span id="det-by"></span></div>
+                    </div>
+
+                    <div class="properties">
+                        <h3>⚡ Physical Properties</h3>
+                        <div class="prop-list" id="prop-list"></div>
+                    </div>
+
+                    <p class="summary" id="det-sum"></p>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <div class="legend" id="legend">
+        <h4>Element Categories</h4>
+        <div class="legend-items">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #a78bfa;"></div>
+                <span>Noble Gas</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fb923c;"></div>
+                <span>Alkali Metal</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fbbf24;"></div>
+                <span>Alkaline Earth</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f472b6;"></div>
+                <span>Transition Metal</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #38bdf8;"></div>
+                <span>Post-transition</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4ade80;"></div>
+                <span>Metalloid</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #34d399;"></div>
+                <span>Nonmetal</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #22d3ee;"></div>
+                <span>Halogen</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #c084fc;"></div>
+                <span>Lanthanoid</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e879f9;"></div>
+                <span>Actinoid</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS.JS">
+
+    </script>
+</body>
+</html>
